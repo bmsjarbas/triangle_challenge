@@ -49,5 +49,24 @@ public class TriangleTest {
         assertEquals("Scalene", triangleType);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void givenInvalidValueForAWhenCreateNewInstanceShouldThrowIllegalArgumentException(){
+        Triangle t = new Triangle(0, 1, 2);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void GivenInvalidValueForBWhenCreateNewInstanceShouldThrowIllegalArgumentException(){
+        Triangle t = new Triangle(1, 0, 2);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void GivenInvalidValueForCWhenCreateNewInstanceShouldThrowIllegalArgumentException(){
+        Triangle t = new Triangle(1, 2, 0);
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void GivenInvalidValueForABCWhenCreateNewInstanceShouldThrowIllegalArgumentException(){
+        Triangle t = new Triangle(0, -2, -10);
+    }
+
 
 }
