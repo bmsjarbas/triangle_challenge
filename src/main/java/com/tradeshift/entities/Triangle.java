@@ -15,10 +15,18 @@ public class Triangle {
     }
 
     public String getType(){
-        if(a == b && b == c)
+        if(allSidesAreEqual())
             return "Equilateral";
-        if(a == b || a == c)
+        if(twoSidesAreEqual())
             return "Isosceles";
         return "Scalene";
+    }
+
+    private boolean twoSidesAreEqual() {
+        return a == b || a == c;
+    }
+
+    private boolean allSidesAreEqual() {
+        return a == b && b == c;
     }
 }

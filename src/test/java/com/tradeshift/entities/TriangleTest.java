@@ -5,6 +5,8 @@ import org.junit.Test;
 /**
  * Created by js on 10/19/16.
  */
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class TriangleTest {
