@@ -17,6 +17,9 @@ public class Triangle {
     public String getType(){
         if(a == b && b == c)
             return "Equilateral";
-        return "";
+        if(a == b || a == c)
+            return "Isosceles";
+
+        return "Scalene";
     }
 }

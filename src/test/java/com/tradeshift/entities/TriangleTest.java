@@ -18,4 +18,36 @@ public class TriangleTest {
         String triangleType = triangle.getType();
         assertEquals("Equilateral", triangleType);
     }
+
+    @Test
+    public void givenSameValuesToABButNotSameForCWhenGetTriangleTypeThenShouldReturnIsosceles(){
+        double a = 10;
+        double b = 10;
+        double c = 5;
+        Triangle triangle = new Triangle(a,b,c);
+        String triangleType = triangle.getType();
+        assertEquals("Isosceles", triangleType);
+    }
+
+    @Test
+    public void givenSameValuesToACButNotSameForBWhenGetTriangleTypeThenShouldReturnIsosceles(){
+        double a = 10;
+        double b = 5;
+        double c = 10;
+        Triangle triangle = new Triangle(a,b,c);
+        String triangleType = triangle.getType();
+        assertEquals("Isosceles", triangleType);
+    }
+
+    @Test
+    public void givenDifferentValuesToABCWhenGetTriangleTypeThenShouldReturnIsosceles(){
+        double a = 4;
+        double b = 5;
+        double c = 6;
+        Triangle triangle = new Triangle(a,b,c);
+        String triangleType = triangle.getType();
+        assertEquals("Scalene", triangleType);
+    }
+
+
 }
