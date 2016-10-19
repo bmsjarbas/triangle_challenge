@@ -17,8 +17,8 @@ public class TriangleTest {
         double b = 10;
         double c = 10;
         Triangle triangle = new Triangle(a,b,c);
-        String triangleType = triangle.getType();
-        assertEquals("Equilateral", triangleType);
+        TriangleType triangleType = triangle.getType();
+        assertEquals(TriangleType.EQUILATERAL, triangleType);
     }
 
     @Test
@@ -27,8 +27,8 @@ public class TriangleTest {
         double b = 10;
         double c = 5;
         Triangle triangle = new Triangle(a,b,c);
-        String triangleType = triangle.getType();
-        assertEquals("Isosceles", triangleType);
+        TriangleType triangleType = triangle.getType();
+        assertEquals(TriangleType.ISOSCELES, triangleType);
     }
 
     @Test
@@ -37,8 +37,18 @@ public class TriangleTest {
         double b = 5;
         double c = 10;
         Triangle triangle = new Triangle(a,b,c);
-        String triangleType = triangle.getType();
-        assertEquals("Isosceles", triangleType);
+        TriangleType triangleType = triangle.getType();
+        assertEquals(TriangleType.ISOSCELES, triangleType);
+    }
+
+    @Test
+    public void givenSameValuesToBCButNotSameForAWhenGetTriangleTypeThenShouldReturnIsosceles(){
+        double a = 5;
+        double b = 10;
+        double c = 10;
+        Triangle triangle = new Triangle(a,b,c);
+        TriangleType triangleType = triangle.getType();
+        assertEquals(TriangleType.ISOSCELES, triangleType);
     }
 
     @Test
@@ -47,27 +57,27 @@ public class TriangleTest {
         double b = 5;
         double c = 6;
         Triangle triangle = new Triangle(a,b,c);
-        String triangleType = triangle.getType();
-        assertEquals("Scalene", triangleType);
+        TriangleType triangleType = triangle.getType();
+        assertEquals(TriangleType.SCALENE, triangleType);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void givenInvalidValueForAWhenCreateNewInstanceShouldThrowIllegalArgumentException(){
-        Triangle t = new Triangle(0, 1, 2);
+        new Triangle(0, 1, 2);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void GivenInvalidValueForBWhenCreateNewInstanceShouldThrowIllegalArgumentException(){
-        Triangle t = new Triangle(1, 0, 2);
+        new Triangle(1, 0, 2);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void GivenInvalidValueForCWhenCreateNewInstanceShouldThrowIllegalArgumentException(){
-        Triangle t = new Triangle(1, 2, 0);
+        new Triangle(1, 2, 0);
     }
     @Test(expected = IllegalArgumentException.class)
     public void GivenInvalidValueForABCWhenCreateNewInstanceShouldThrowIllegalArgumentException(){
-        Triangle t = new Triangle(0, -2, -10);
+       new Triangle(0, -2, -10);
     }
 
 
